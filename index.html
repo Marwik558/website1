@@ -9,10 +9,10 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="footer.css">
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="nav.css">
-  <link rel="stylesheet" href="kontakt.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="assets/css/kontakt.css">
   <script src="assets/js/scroll.js"></script>
 </head>
 
@@ -28,7 +28,9 @@
       </div>
     </div>
 
-
+    <nav id="main-nav" class="container">
+      <a href="#home">Úvod</a>
+      <a href="#ubytovani">Ubytování</a>
       <a href="fotogalerie.html">Fotogalerie</a>
       <a href="#kontakt">Kontakt</a>
       <a class="cta" href="tel:+420777053015">Rezervovat</a>
@@ -80,7 +82,7 @@
     </div>
 
     <div class="about-img">
-      <img src="assets/pic/interier4.jpg" alt="Interiér Motorest Lednice">
+      <img src="interier4.jpg" alt="Interiér Motorest Lednice">
     </div>
 
   </div>
@@ -113,14 +115,14 @@
     <section id="fotogalerie" class="container hidden">
       <h2>Fotogalerie</h2>
       <div class="gallery">
-        <div class="card" onclick="openModal('assets/pic/restaurace1.jpg')">
-          <div class="img-wrapper"><img src="assets/pic/restaurace1.jpg" alt="Restaurace 1"></div>
+        <div class="card" onclick="openModal('restaurace1.jpg')">
+          <div class="img-wrapper"><img src="restaurace1.jpg" alt="Restaurace 1"></div>
         </div>
-        <div class="card" onclick="openModal('assets/pic/interier4.jpg')">
-          <div class="img-wrapper"><img src="assets/pic/interier4.jpg" alt="Interiér pokoje 4"></div>
+        <div class="card" onclick="openModal('interier4.jpg')">
+          <div class="img-wrapper"><img src="interier4.jpg" alt="Interiér pokoje 4"></div>
         </div>
-        <div class="card" onclick="openModal('assets/pic/restaurace6.jpg')">
-          <div class="img-wrapper"><img src="assets/pic/restaurace6.jpg" alt="Restaurace 6"></div>
+        <div class="card" onclick="openModal('restaurace6.jpg')">
+          <div class="img-wrapper"><img src="restaurace6.jpg" alt="Restaurace 6"></div>
         </div>
       </div>
     </section>
@@ -166,7 +168,7 @@
               <a href="#" class="btn-social">Facebook</a>
             </div>
           </div>
-        </div>
+        </div>  
 
       </div>
     </section>
@@ -208,5 +210,3 @@
 
 </body>
 </html>
-
-
