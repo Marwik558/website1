@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fotogalerie — Motorest Lednice</title>
+  <meta name="description" content="Fotogalerie Motorest Lednice – restaurace a ubytování.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/nav.css">
+                <link rel="stylesheet" href="assets/css/kontakt.css">
+   <script src="assets/js/scroll.js"></script>
+
+ <style>
+    :root{
+      --accent:#b22222;
+      --bg-gradient: linear-gradient(135deg, #fef9f3, #ffe6e0, #ffd6d6);
+      --text:#1a1a1a;
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    body{
+      margin:0;
+      background:var(--bg-gradient);
+      color:var(--text);
+      line-height:1.5;
+    }
+    h1{text-align:center;margin:40px 0;}
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+      padding:0 20px 40px 20px;
+    }
+    .placeholder{
+      background:#ddd;
+      border-radius:12px;
+      width:100%;
+      height:180px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#888;
+      font-size:16px;
+      cursor:pointer;
+      transition: transform 0.3s;
+    }
+    .placeholder:hover{transform:scale(1.05);}
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.85);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+    .modal.show{display:flex;}
+    .modal img{max-width:95%;max-height:85%;border-radius:12px;transition:.3s;}
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#eee;
+      font-size:14px;
+      color:#555;
+    }
+  </style>
+
+</head>
+<body>
+<header id="site-header">
+    <div class="container topbar">
+      <div class="brand">
+        <img src="https://www.motorest-lednice.cz/obrazek/3/logo/" alt="Motorest Lednice" class="logo-img">
+        <div>
+          <strong>Motorest Lednice</strong><br>
+          <span style="font-size:13px; color:black;">Na Vantrokách, Ústí nad Labem</span>
+        </div>
+      </div>
+
+    </div>
+    <nav id="main-nav" class="container">
+      <a href="index.html">Úvod</a>
+      <a href="#ubytovani">Ubytování</a>
+      <a href="fotogalerie.html">Fotogalerie</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="cta" href="tel:+420777053015">Rezervovat</a>
+    </nav>
+  </header>
+
+<p></p>&nbsp;&nbsp;&nbsp;
+<p></p>
+&nbsp;&nbsp;&nbsp;
+<p></p>
+&nbsp;&nbsp;&nbsp;
+
+  <h1>Fotogalerie Motorest Lednice</h1>
+
+  <div class="gallery">
+
+    <div class="card" onclick="openModal('assets/pic/restaurace1.jpg')">
+      <img src="assets/pic/restaurace1.jpg" alt="Restaurace 1">
+      <p>Restaurace (1)</p>
+    </div>
+    <div class="card" onclick="openModal('assets/pic/restaurace2.jpg')">
+      <img src="assets/pic/restaurace2.jpg" alt="Restaurace 2">
+      <p>Restaurace (2)</p>
+    </div>
+    <div class="card" onclick="openModal('assets/pic/restaurace6.jpg')">
+      <img src="assets/pic/restaurace6.jpg" alt="Restaurace 6">
+      <p>Restaurace (6)</p>
+    </div>
+    <div class="card" onclick="openModal('assets/pic/interier4.jpg')">
+      <img src="assets/pic/interier4.jpg" alt="Interiér pokoje 4">
+      <p>Interiér pokoje (4)</p>
+    </div>
+    <div class="card" onclick="openModal('assets/pic/motorest1.jpg')">
+      <img src="assets/pic/motorest1.jpg" alt="Motorest Lednice 1">
+      <p>Motorest Lednice (1)</p>
+  </div>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
+      <strong>Motorest Lednice</strong>
+      <div class="small">© 2025 — info@motorest-lednice.cz • +420 777 053 015</div>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Zvětšený obrázek">
+  </div>
+
+  <script>
+    let lastScroll=0;
+    const header=document.getElementById('site-header');
+    window.addEventListener('scroll',()=>{
+      const currentScroll=window.pageYOffset;
+      if(currentScroll>lastScroll && currentScroll>100){header.classList.add('hide');}
+      else{header.classList.remove('hide');}
+      lastScroll=currentScroll;
+    });
+
+    const toggle=document.getElementById('themeToggle');
+    toggle.onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'':'dark'};
+
+    const btn=document.querySelector('.menu-toggle');
+    const nav=document.getElementById('main-nav');
+    btn.onclick=()=>{btn.classList.toggle('active');nav.style.display=btn.classList.contains('active')?'flex':'none'};
+
+    function openModal(src){
+      const m=document.getElementById('modal');
+      const img=document.getElementById('modalImg');
+      img.src=src;
+      m.classList.add('show')
+    }
+
+    function closeModal(){document.getElementById('modal').classList.remove('show')}
+  </script>
+</body>
+</html>
