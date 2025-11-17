@@ -1,0 +1,77 @@
+/* --- Kontaktní sekce: velká bublina --- */
+.contact-bubble {
+  background-color: #f5f5f5; /* světle šedá bublina */
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* jednotlivé boxy uvnitř bubliny */
+.contact-bubble .contact-card {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  flex: 1 1 250px; /* responzivní šířka */
+}
+
+.contact-bubble .contact-card .icon {
+  font-size: 24px;
+  color: #f2b800;
+  flex-shrink: 0;
+}
+
+.contact-bubble .contact-card .content strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.contact-bubble .contact-card .content .muted {
+  color: #555;
+  font-size: 14px;
+}
+
+.contact-bubble .contact-card .content a {
+  color: #000;
+  text-decoration: none;
+}
+
+.contact-bubble .contact-card .content a:hover {
+  text-decoration: underline;
+}
+
+/* tlačítka sociálních sítí */
+.social-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btn-social {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.btn-social:hover {
+  background: #f2b800;
+  color: #fff;
+}
+
+/* --- Responzivita --- */
+@media(max-width: 900px) {
+  .contact-bubble {
+    flex-direction: column;
+  }
+}
